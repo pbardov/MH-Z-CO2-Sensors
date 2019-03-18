@@ -7,7 +7,7 @@
 
 // #define MHZ_DEBUG
 
-#define MHZ_PREHEAT_TIME (unsigned long)(3 * 60 * 1000)
+#define MHZ_PREHEAT_TIME (unsigned long)(3UL * 60UL * 1000UL)
 
 #if ARDUINO >= 100
 #include "Arduino.h"
