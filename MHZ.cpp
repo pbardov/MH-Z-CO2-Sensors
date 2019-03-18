@@ -227,11 +227,7 @@ int MHZ::readCO2UART() {
   return ppm_uart;
 }
 
-uint8_t MHZ::getLastTemperature() {
-  if (isPreHeating())
-    return STATUS_NOT_READY;
-  return temperature;
-}
+uint8_t MHZ::getLastTemperature() { return temperature; }
 
 byte MHZ::getCheckSum(byte *packet) {
 
