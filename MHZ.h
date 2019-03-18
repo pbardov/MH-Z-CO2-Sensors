@@ -5,6 +5,8 @@
 #ifndef MHZ_H
 #define MHZ_H
 
+// #define MHZ_DEBUG
+
 #if ARDUINO >= 100
 #include "Arduino.h"
 #else
@@ -24,9 +26,9 @@ extern const int STATUS_INCOMPLETE;
 extern const int STATUS_NOT_READY;
 
 class MHZ {
- public:
+public:
   MHZ(uint8_t rxpin, uint8_t txpin, uint8_t pwmpin, uint8_t type);
-  MHZ(Stream * serial, uint8_t pwmpin, uint8_t type);
+  MHZ(Stream *serial, uint8_t pwmpin, uint8_t type);
 
   void setDebug(boolean enable);
 
@@ -37,11 +39,11 @@ class MHZ {
   int readCO2PWM();
   uint8_t getLastTemperature();
 
- private:
+private:
   uint8_t _pwmpin, _type, temperature;
   boolean debug = false;
 
-  Stream * _serial;
+  Stream *_serial;
   byte getCheckSum(byte *packet);
 };
 
