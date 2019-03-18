@@ -50,9 +50,9 @@ void MHZ::setDebug(boolean enable) {
 
 boolean MHZ::isPreHeating() {
   if (_type == MHZ14A) {
-    return millis() < (3 * 60 * 1000);
+    return millis() < MHZ_PREHEAT_TIME;
   } else if (_type == MHZ19B) {
-    return millis() < (3 * 60 * 1000);
+    return millis() < MHZ_PREHEAT_TIME;
   } else {
 
 #ifdef MHZ_DEBUG
